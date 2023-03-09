@@ -1,11 +1,16 @@
 #!/bin/sh
 
-if [ ! -d "./flags" ]; then
-    mkdir flags 
+src="./src"
+bin="./bin"
+flags="./flags"
+exe="$bin/flaggen"
+
+if [ ! -d "$flags" ]; then
+    mkdir "$flags"
 fi
 
-if [ ! -d "./bin" ]; then
-    mkdir bin
+if [ ! -d "$bin" ]; then
+    mkdir "$bin"
 fi
 
-gcc "./src/flaggen.c" -o ./bin/flaggen && ./bin/flaggen $1 $2 $3 && feh "./flags/flag_$1.png"
+gcc "$src/flaggen.c" -o "$exe" && "$exe" $1 $2 $3 && feh "$flags/flag_$1.png"
