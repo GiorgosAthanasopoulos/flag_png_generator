@@ -14,3 +14,9 @@ In your terminal run:
 <li>`chmod +x ./run`</li>
 <li>Then use with: `./run {country_abbreviation} {width} {height}`</li>
 </ul>
+
+## Example
+<ul>
+<li>Greece: `./run gr 1280 720`</li>
+<li>Colombia: `./run co 900 600`</li>
+</ul>
