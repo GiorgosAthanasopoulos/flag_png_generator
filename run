@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gcc "./flaggen.c" && ./a.out $1 $2 $3 && feh "./flag_$1.png"
