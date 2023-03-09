@@ -1,3 +1,11 @@
 #!/bin/sh
 
-gcc "./flaggen.c" && ./a.out $1 $2 $3 && feh "./flag_$1.png"
+if [ ! -d "./flags" ]; then
+    mkdir flags 
+fi
+
+if [ ! -d "./bin" ]; then
+    mkdir bin
+fi
+
+gcc "./src/flaggen.c" -o ./bin/flaggen && ./bin/flaggen $1 $2 $3 && feh "./flags/flag_$1.png"
