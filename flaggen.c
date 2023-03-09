@@ -1,8 +1,8 @@
 #define OLIVEC_IMPLEMENTATION
-#include "olive.c"
+#include "deps/olive.c"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
+#include "deps/stb_image_write.h"
 
 const char* getFilename(const char* country) {
     const char* str1 = "flag_";
