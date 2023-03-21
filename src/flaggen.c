@@ -82,13 +82,11 @@ int main(int argc, const char* argv[]) {
         olivec_rect(oc, 0, 2 * HEIGHT / 3, WIDTH, HEIGHT / 3, red);
     } else if (!strcmp(country, "de")) {
         uint32_t red = OLIVEC_RGBA(220, 0, 0, 255);
-        uint32_t yellow = OLIVEC_RGBA(254, 206, 0, 255);
         olivec_fill(oc, black);
         olivec_rect(oc, 0, HEIGHT / 3, WIDTH, HEIGHT / 3, red);
         olivec_rect(oc, 0, 2 * HEIGHT / 3, WIDTH, HEIGHT / 3, OLIVEC_RGBA(254, 206, 0, 255));
     } else if (!strcmp(country, "th")) {
         uint32_t red = OLIVEC_RGBA(237, 27, 36, 255);
-        uint32_t blue = OLIVEC_RGBA(36, 29, 80, 255);
         olivec_fill(oc, white);
         olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 6, red);
         olivec_rect(oc, 0, HEIGHT - HEIGHT / 6, WIDTH, HEIGHT / 6, red);
@@ -112,7 +110,6 @@ int main(int argc, const char* argv[]) {
         olivec_rect(oc, 0, lineheight * 2, WIDTH, lineheight, red);
         olivec_rect(oc, WIDTH / 2 - lineheight / 2, 0, lineheight, HEIGHT, red);
     } else if (!strcmp(country, "co")) {
-        uint32_t yellow = OLIVEC_RGBA(253, 209, 22, 255);
         uint32_t blue = OLIVEC_RGBA(1, 56, 147, 255);
         uint32_t red = OLIVEC_RGBA(206, 17, 39, 255);
         olivec_fill(oc, OLIVEC_RGBA(253, 209, 22, 255));
@@ -277,7 +274,98 @@ int main(int argc, const char* argv[]) {
         olivec_rect(oc, WIDTH / 4, 0, 3 * WIDTH / 4, HEIGHT / 3, green);
         olivec_rect(oc, WIDTH / 4, HEIGHT / 3, 3 * WIDTH / 4, HEIGHT / 3, white);
         olivec_rect(oc, WIDTH / 4, 2 * HEIGHT / 3, 3 * WIDTH / 4, HEIGHT / 3, black);
-        // TODO: denmark and after...
+    } else if (!strcmp(country, "dk")) {
+        uint32_t red = OLIVEC_RGBA(198, 12, 49, 255);
+        olivec_fill(oc, red);
+        int col = WIDTH / 10;
+        int row = HEIGHT / 10;
+        olivec_rect(oc, col * 3, 0, col, HEIGHT, white);
+        olivec_rect(oc, 0, HEIGHT / 2 - row / 2, WIDTH, row, white);
+    } else if (!strcmp(country, "fl")) {
+        uint32_t blue = OLIVEC_RGBA(0, 54, 127, 255);
+        olivec_fill(oc, white);
+        int col = WIDTH / 10;
+        int row = HEIGHT / 10;
+        olivec_rect(oc, col * 3, 0, col, HEIGHT, blue);
+        olivec_rect(oc, 0, HEIGHT / 2 - row / 2, WIDTH, row, blue);
+    } else if (!strcmp(country, "no")) {
+        uint32_t red = OLIVEC_RGBA(239, 43, 45, 255);
+        uint32_t blue = OLIVEC_RGBA(0, 39, 104, 255);
+        olivec_fill(oc, red);
+        int col_big = WIDTH / 7;
+        int row_big = HEIGHT / 5;
+        int row = row_big / 2;
+        int col = col_big / 2;
+        olivec_rect(oc, 0, row_big * 2, WIDTH, row_big, white);
+        olivec_rect(oc, col_big * 2, 0, col_big, HEIGHT, white);
+        olivec_rect(oc, 0, row_big * 2 + row / 2, WIDTH, row, blue);
+        olivec_rect(oc, col_big * 2 + col / 2, 0, col, HEIGHT, blue);
+    } else if (!strcmp(country, "sco")) {
+        uint32_t blue = OLIVEC_RGBA(1, 91, 185, 255);
+        olivec_fill(oc, blue);
+        olivec_line(oc, 0, 0, WIDTH, HEIGHT, white);
+        olivec_line(oc, WIDTH, 0, 0, HEIGHT, white);
+    } else if (!strcmp(country, "ie")) {
+        uint32_t green = OLIVEC_RGBA(0, 155, 72, 255);
+        uint32_t orange = OLIVEC_RGBA(255, 121, 0, 255);
+        int col = WIDTH / 3;
+        olivec_fill(oc, orange);
+        olivec_rect(oc, 0, 0, col, HEIGHT, green);
+        olivec_rect(oc, col * 1, 0, col, HEIGHT, white);
+    } else if (!strcmp(country, "pw")) {
+        uint32_t blue = OLIVEC_RGBA(74, 173, 214, 255);
+        uint32_t yellow = OLIVEC_RGBA(255, 222, 0, 255);
+        olivec_fill(oc, blue);
+        olivec_circle(oc, WIDTH / 2 - WIDTH / 10, HEIGHT / 2, HEIGHT / 3, yellow);
+    } else if (!strcmp(country, "mc")) {
+        uint32_t red = OLIVEC_RGBA(206, 17, 39, 255);
+        olivec_fill(oc, white);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 2, red);
+    } else if (!strcmp(country, "lu")) {
+        uint32_t red = OLIVEC_RGBA(237, 40, 57, 255);
+        uint32_t blue = OLIVEC_RGBA(1, 161, 223, 255);
+        olivec_fill(oc, blue);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 3, red);
+        olivec_rect(oc, 0, HEIGHT / 3, WIDTH, HEIGHT / 3, white);
+    } else if (!strcmp(country, "ee")) {
+        uint32_t blue = OLIVEC_RGBA(72, 155, 216, 255);
+        olivec_fill(oc, white);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 3, blue);
+        olivec_rect(oc, 0, HEIGHT / 3, WIDTH, HEIGHT / 3, black);
+    } else if (!strcmp(country, "mu")) {
+        uint32_t red = OLIVEC_RGBA(235, 40, 57, 255);
+        uint32_t blue = OLIVEC_RGBA(26, 32, 110, 255);
+        uint32_t yellow = OLIVEC_RGBA(254, 213, 0, 255);
+        uint32_t green = OLIVEC_RGBA(0, 165, 81, 255);
+        olivec_fill(oc, green);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 4, red);
+        olivec_rect(oc, 0, HEIGHT / 4, WIDTH, HEIGHT / 4, blue);
+        olivec_rect(oc, 0, HEIGHT / 4 * 2, WIDTH, HEIGHT / 4, yellow);
+    } else if (!strcmp(country, "ga")) {
+        uint32_t green = OLIVEC_RGBA(0, 158, 97, 255);
+        uint32_t yellow = OLIVEC_RGBA(253, 209, 22, 255);
+        uint32_t blue = OLIVEC_RGBA(58, 117, 195, 255);
+        olivec_fill(oc, blue);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 3, green);
+        olivec_rect(oc, 0, HEIGHT / 3, WIDTH, HEIGHT / 3, yellow);
+    } else if (!strcmp(country, "lv")) {
+        uint32_t red = OLIVEC_RGBA(158, 48, 57, 255);
+        olivec_fill(oc, red);
+        olivec_rect(oc, 0, HEIGHT / 5 * 2, WIDTH, HEIGHT / 5, white);
+    } else if (!strcmp(country, "lt")) {
+        uint32_t yellow = OLIVEC_RGBA(252, 185, 19, 255);
+        uint32_t green = OLIVEC_RGBA(0, 106, 68, 255);
+        uint32_t red = OLIVEC_RGBA(194, 39, 45, 255);
+        olivec_fill(oc, red);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 3, yellow);
+        olivec_rect(oc, 0, HEIGHT / 3, WIDTH, HEIGHT / 3, green);
+    } else if (!strcmp(country, "am")) {
+        uint32_t red = OLIVEC_RGBA(217, 0, 17, 255);
+        uint32_t blue = OLIVEC_RGBA(0, 51, 160, 255);
+        uint32_t yellow = OLIVEC_RGBA(242, 168, 1, 255);
+        olivec_fill(oc, yellow);
+        olivec_rect(oc, 0, 0, WIDTH, HEIGHT / 3, red);
+        olivec_rect(oc, 0, HEIGHT / 3, WIDTH, HEIGHT / 3, blue);
     } else {
         free((char*)file_path);
         fprintf(stderr, "Country not yet implemented!\n");
