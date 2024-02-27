@@ -1,16 +1,20 @@
 #!/bin/sh
 
-src="./src"
-bin="./bin"
-flags="./flags"
-exe="$bin/flaggen"
+CC="gcc" # c compiler to use
+SRC="./src/flaggen.c" # path to source code
+BIN="./bin" # path to build dir
+TARGET="$BIN/flaggen" # path to output binary file
+FEH="feh" # image preview program to use -default=feh 
+FLAGS="./flags" # path to output image folder
 
-if [ ! -d "$flags" ]; then
-    mkdir "$flags"
+if [ ! -d "$FLAGS" ]; then
+    mkdir "$FLAGS"
 fi
 
-if [ ! -d "$bin" ]; then
-    mkdir "$bin"
+if [ ! -d "$BIN" ]; then
+    mkdir "$BIN"
 fi
 
-gcc "$src/flaggen.c" -o "$exe" && "$exe" $1 $2 $3 && feh "$flags/flag_$1.png"
+"$CC" "$SRC" -o "$TARGET"
+"$TARGET" $1 $2 $3
+"$FEH" "$FLAGS/flag_$1.png"
